@@ -1,10 +1,12 @@
 import styles from './styles.module.css';
 
+
 type PropsHead = {
   img: string;
   texto1: string;
   texto2: string;
 };
+
 export function Header(props: PropsHead) {
   const { img, texto1, texto2 } = props;
   return (
@@ -28,6 +30,7 @@ type PropsPL = {
   playlist: CardInfo;
 };
 
+//Listen Again
 export function Playlist(props: PropsPL) {
   const { playlist } = props;
   const part2 = playlist.songs ? " - " + playlist.songs : "";
@@ -47,6 +50,8 @@ export function Playlist(props: PropsPL) {
     </div>
   );
 }
+
+//Similar To
 export function PlaylistCircle(props: PropsPL) {
   const { playlist } = props;
   const part2 = playlist.songs ? " - " + playlist.songs : "";
@@ -67,6 +72,7 @@ export function PlaylistCircle(props: PropsPL) {
   );
 }
 
+//Quick Picks
 type PropsMusic = {
   music: CardInfo;
 };
@@ -85,6 +91,7 @@ export function Music(props: PropsMusic) {
   );
 }
 
+//Box
 type User = {
   img: string;
   name: string;

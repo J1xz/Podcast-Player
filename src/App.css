@@ -24,9 +24,7 @@ header input {
   border: 2px solid var(--border-color);
   color: var(--text-color);
 }
-main {
-  padding: 0px 100px;
-}
+
 .avatar {
   margin-left: 15px;
   width: 30px;
@@ -97,4 +95,31 @@ footer .text h4,
   font-size: small;
   margin: 00px 10px;
   color: var(--text-color);
+}
+.main-container {
+  display: flex;
+  flex: 1; 
+}
+
+.sidebar {
+  width: 250px; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+main {
+  flex-grow: 1; 
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 20px 0 230px;
+  width: 85%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  min-height: 100hv; 
+  display: flex;
+  flex-direction: column;
 }

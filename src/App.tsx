@@ -1,11 +1,33 @@
+import { useState } from "react";
 import './App.css'
-import { SectionBox } from "./components/Modules";
-import { SectionSongs } from "./components/Modules";
-import { SectionCircle } from "./components/Modules";
-import {user, arrayListenAgain, arrayArtist, arrayQuickP,arrayRecAlbum} from "./components/Api";
+
+import SideBar from './components/SideBar/SideBar';
+import PlaylistForm from "./components/Playlist/PlaylistForm";
+import Home from './components/Home';
+
 
 
 function App() {
+  const [view, setView] = useState<"home" | "playlist">("home");
+  const [item, setItem] = useState({
+    title: "",
+    description: "",
+    imageUrl: "",
+  });
+const [list, setList] = useState<
+    Array<{ title: string; description: string; imageUrl?: string }>
+  >([]);
+
+function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+    setItem({ ...item, [name]: value });
+}
+
+function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setList([...list, item]);
+    setItem({ title: "", description: "", imageUrl: "" });
+}
   return (
     <>
       <header>
@@ -14,33 +36,21 @@ function App() {
         <img className="share" src="./src/assets/Header/cast.png"></img>
         <img className="avatar" src="./src/assets/Header/Avatar.png"></img>
       </header>
-      <main>
-        <SectionBox
-          user={user}
-          texto1={user.name}
-          texto2="Listen Again"
-          arrayCard={arrayListenAgain}
+      
+      <div className="main-container">
+        <SideBar setView={setView} list={list} />
+        {view === "home" ? (
+          <Home />
+        ) : (
+          <PlaylistForm
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
           />
-        <SectionCircle
-          user={user}
-          texto1="SIMILAR TO"
-          texto2="[Artista]"
-          arrayCard={arrayArtist}
-          />
-        <SectionSongs
-          user={user}
-          texto1="START RADIO FROM A SONG"
-          texto2="Quick picks"
-          arrayCard={arrayQuickP}
-          />
-        <SectionBox
-          user={user}
-          texto1=""
-          texto2="Recommended albums"
-          arrayCard={arrayRecAlbum}
-        />
-      </main>
+        )}
+      </div>
+       
 
+      
       <footer className="reproductor">
         <div className='BotonesIzqGrupo' >
         <img className="BotonesIzq" src="/src/assets/Footer/skip_previous.png" alt="" />
