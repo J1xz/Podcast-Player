@@ -1,42 +1,125 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+header {
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 100px;
+  background-color: var(--primary-color);
+}
+header .logo {
+  max-width: auto;
+  height: 60px;
+  padding: 0px 20px;
+}
+header input {
+  margin: 0px auto 0px 50px;
+  padding: 10px;
+  font-size: 16px;
+  width: 30%;
+  border-radius: 7px;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.avatar {
+  margin-left: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.share {
+  width: 20px;
+  height: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+footer {
+  padding: 5px 0px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  padding: 10px 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.card {
-  padding: 2em;
+.BotonesIzqGrupo{
+  display: flex;
+}
+.BotonesIzqGrupo .BotonesIzq{
+  margin-left: 10px;
+  cursor: pointer;
+}
+.BotonesMedGrupo{
+  display: flex;
+  width: 20px;
+  margin-left: 10px;
+}
+.BotonesDerGrupo{
+  display: flex;
+  margin-right: 10px;
+}
+.BotonesDerGrupo .BotonesDer{
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+
+footer .cancion {
+  align-self: center;
+  align-items: center;
+  display: flex;
+  width: 407;
+}
+footer .cancion img {
+  width: auto;
+  height: 35px;
+}
+footer .cancion .botonesMid {
+  margin-left: 10px;
+  width: auto;
+  height: 15px;
+  cursor: pointer;
+}
+
+footer .text h4,
+.text p {
+  font-size: small;
+  margin: 00px 10px;
+  color: var(--text-color);
+}
+.main-container {
+  display: flex;
+  flex: 1; 
+}
+
+.sidebar {
+  width: 250px; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+main {
+  flex-grow: 1; 
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 20px 0 230px;
+  width: 85%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  min-height: 100hv; 
+  display: flex;
+  flex-direction: column;
 }
